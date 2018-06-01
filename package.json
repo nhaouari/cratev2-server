@@ -1,0 +1,56 @@
+{
+    "name": "crate-storage",
+    "version": "1.1.0",
+    "author": "Noureddine HAOUARi <haouarin@gmail.com>",
+    "description": "this is a storage server used for CRATE application",
+    "main": "server.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/haouarin/jquery-crate.git"
+    },
+    "keywords": [
+        "Random Peer Sampling",
+        "Adaptive",
+        "browser-to-browser communication",
+        "WebRTC"
+    ],
+    "dependencies": {
+        "clone": "^1.0.3",
+        "crate-backend": "git+https://github.com/nhaouari/jquery-crate.git#099bcd1b95142f47bf6afe65b02a4ac722033e7d",
+        "express": "*",
+        "extend": "^3.0.1",
+        "jsdom": "^11.9.0",
+        "jsonfile": "^4.0.0",
+        "lodash": "^4.17.4",
+        "lodash.merge": "^4.6.1",
+        "marked": "0.3.x",
+        "ps-tree": "^1.1.0",
+        "request": "*",
+        "shortid": "*",
+        "socket.io-client": "1.3.x",
+        "sorted-cmp-array": "2.0.x",
+        "store": "^2.0.12",
+        "string-hash": "1.1.x",
+        "uglify-js": "^1.3.5",
+        "unicast-definition": "^0.1.0",
+        "uuid": "^3.0.1",
+        "version-vector-with-exceptions": "^0.1.0",
+        "wrtc": "*"
+    },
+    "devDependencies": {
+        "browserify": "6.2.x",
+        "brfs": "1.4.x"
+    },
+    "scripts": {
+        "start": "DEBUG=*,-not_this,-express*,spray-wrtc node server.js",
+        "start2": "set DEBUG=*,-not_this,-express* & node server.js",
+        "debug": "browserify lib/session.js --standalone session --debug > build/jquery-crate.bundle.debug.js",
+        "build": "browserify lib/session.js --standalone session > build/jquery-crate.bundle.js",
+        "watch": "watchify lib/session.js --standalone session -o build/jquery-crate.bundle.js -d -v",
+        "docs": "esdoc -c esdoc.json"
+    },
+    "engines": {
+        "node": "8.10.0"
+    },
+    "license": "MIT"
+}

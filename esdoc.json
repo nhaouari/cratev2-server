@@ -1,0 +1,34 @@
+{
+  "source":"./lib/view",
+  "destination":"./docs",
+  "package": "./package.json",
+  "plugins": [
+    {"name": "esdoc-node"},
+    {"name": "esdoc-ecmascript-proposal-plugin", "option": {"all": true}},
+    {
+      "name": "esdoc-standard-plugin",
+      "options": {
+        "lint": {"enable": true},
+        "coverage": {"enable": false},
+        "accessor": {
+          "access": ["public", "protected"],
+          "autoPrivate": true
+        },
+        "undocumentIdentifier": {"enable": true},
+        "unexportedIdentifier": {"enable": false},
+        "typeInference": {"enable": true},
+        "brand": {
+          "title": "Jquery-CRATE2",
+          "description": "Core functions of CRATEV2",
+          "repository": "https://github.com/nhaouari/jquery-crate",
+          "site": "https://github.com/nhaouari/jquery-crate",
+          "author": "https://github.com/nhaouari/"
+        },
+        "manual": {
+          "index": "./README.md",
+          "globalIndex": true
+        }
+      }
+    }
+  ]
+}
